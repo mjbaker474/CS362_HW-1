@@ -268,6 +268,69 @@ class TestCreditCardValidator(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("272065935072615"))
 
+    def test_35(self):
+        """Verifies invalid Amex prefix 35 of valid length and valid checksum
+        returns False.
+
+        Added to check boundary tests not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("359478142013734"))
+
+    def test_36(self):
+        """Verifies invalid Mastercard prefix 50 of valid length and valid
+         checksum returns False.
+
+        Added to check boundary tests not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("5024873210221785"))
+
+    def test_37(self):
+        """Verifies invalid Mastercard prefix 56 of valid length and valid
+         checksum returns False.
+
+        Added to check boundary tests not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("5624873210221789"))
+
+    def test_38(self):
+        """Verifies invalid Mastercard prefix 2220 of valid length and valid
+         checksum returns False.
+
+        Added to check boundary tests not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("2200873210221788"))
+
+    def test_39(self):
+        """Verifies invalid Mastercard prefix 2721 of valid length and valid
+         checksum returns False.
+
+        Added to check boundary tests not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("2721873210221788"))
+
+    def test_40(self):
+        """Verifies invalid prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error guessing test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("9521873210221785"))
+
+    def test_41(self):
+        """Verifies invalid prefix of valid 15 digit length and valid
+         checksum returns False.
+
+        Added as Error guessing test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("688524809611146"))
+
 
 if __name__ == '__main__':
     unittest.main()
