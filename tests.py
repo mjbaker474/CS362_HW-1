@@ -351,7 +351,7 @@ class TestCreditCardValidator(unittest.TestCase):
         """Verifies invalid 3 prefix of valid 16 digit length and valid
          checksum returns False.
 
-        Added as Error guessing test not covered by initial partition
+        Added as boundary test not covered by initial partition
         categories.
         """
         self.assertFalse(credit_card_validator("3933962240020468"))
@@ -360,10 +360,82 @@ class TestCreditCardValidator(unittest.TestCase):
         """Verifies invalid 5 prefix of valid 16 digit length and valid
          checksum returns False.
 
-        Added as Error guessing test not covered by initial partition
+        Added as Error boundary test not covered by initial partition
         categories.
         """
         self.assertFalse(credit_card_validator("5933962240020463"))
+
+    def test_46(self):
+        """Verifies invalid 0 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("0831253539009159"))
+
+    def test_47(self):
+        """Verifies invalid 1 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("1831253539009157"))
+
+    def test_48(self):
+        """Verifies invalid 2 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("2831253539009155"))
+
+    def test_49(self):
+        """Verifies invalid 4 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("4831253539009151"))
+
+    def test_50(self):
+        """Verifies invalid 6 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("6831253539009156"))
+
+    def test_51(self):
+        """Verifies invalid 7 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("7831253539009154"))
+
+    def test_52(self):
+        """Verifies invalid 8 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("8831253539009152"))
+
+    def test_53(self):
+        """Verifies invalid 9 prefix of valid 16 digit length and valid
+         checksum returns False.
+
+        Added as Error boundary test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("9831253539009150"))
 
 
 if __name__ == '__main__':
