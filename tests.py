@@ -331,6 +331,22 @@ class TestCreditCardValidator(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("688524809611146"))
 
+    def test_42(self):
+        """Verifies None type returns False.
+
+        Added as Error guessing test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator(None))
+
+    def test_43(self):
+        """Verifies Str of all characters returns False.
+
+        Added as Error guessing test not covered by initial partition
+        categories.
+        """
+        self.assertFalse(credit_card_validator("abcdefghijklmnop"))
+
 
 if __name__ == '__main__':
     unittest.main()
